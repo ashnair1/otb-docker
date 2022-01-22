@@ -27,3 +27,5 @@ ENV CMAKE_PREFIX_PATH=${TARGET} \
     LC_NUMERIC=C \
     OTB_APPLICATION_PATH=${TARGET}/lib/otb/applications \
     PATH=${TARGET}/bin:$PATH
+
+COPY . .
