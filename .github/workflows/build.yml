@@ -3,7 +3,7 @@ name: Build
 on:
   push:
     branches:
-      - '7.2.0'
+      - 'main'
 
 jobs:
   docker:
@@ -28,4 +28,4 @@ jobs:
         with:
           context: .
           push: false
-          tags: otb/7.2.0:latest
+          tags: otb/7.4.0:latest
