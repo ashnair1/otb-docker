@@ -3,7 +3,7 @@ name: Build
 on:
   push:
     branches:
-      - 'main'
+      - '7.4.0'
 
 env:
   TEST_TAG: otb/7.4.0:test
