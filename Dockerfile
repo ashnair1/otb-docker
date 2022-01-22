@@ -11,7 +11,7 @@ ENV TARGET=/opt/otb
 RUN apt-get update && apt-get -y install python3-distutils wget file
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN wget -P /opt/ https://www.orfeo-toolbox.org/OTB/OTB-7.4.0-Linux64.run && chmod +x /opt/OTB-7.4.0-Linux64.run
+RUN wget -P /opt/ https://www.orfeo-toolbox.org/packages/OTB-7.4.0-Linux64.run && chmod +x /opt/OTB-7.4.0-Linux64.run
 RUN mkdir -p /opt/otb && /opt/OTB-7.4.0-Linux64.run --target ${TARGET} &> /tmp/.otb_build.log
 RUN rm /opt/OTB-7.4.0-Linux64.run
 
