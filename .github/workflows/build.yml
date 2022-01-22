@@ -2,8 +2,8 @@ name: Build
 
 on:
   push:
-    branches:
-      - '7.2.0'
+    paths:
+      - 'Dockerfile'
 
 env:
   TEST_TAG: otb/7.2.0:test
