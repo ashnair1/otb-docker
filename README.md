@@ -14,7 +14,7 @@ Refer to the documentation [here](https://github.com/OSGeo/gdal/tree/master/dock
 
 ### Run
 
-```
+```console
 docker run --rm --env OTB_MAX_RAM_HINT=2048 -v /path/to/local/data:/data otb:7.2.0S otbcli_ReadImageInfo -in /data/img.tif
 ```
 
