@@ -6,7 +6,7 @@ on:
       - 'Dockerfile'
 
 env:
-  TEST_TAG: otb/7.1.0:test
+  TEST_TAG: otb/7.3.0:test
 
 jobs:
   docker:
