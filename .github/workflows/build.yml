@@ -4,10 +4,13 @@ on:
   push:
     paths:
       - 'Dockerfile'
+      - '.github/workflows/*'
 
 env:
   TEST_TAG: ${{ secrets.DOCKERHUB_USERNAME }}/otb:7.2.0test
   PROD_TAG: ${{ secrets.DOCKERHUB_USERNAME }}/otb:7.2.0
+  BASE1: osgeo/gdal:ubuntu-small-3.1.3
+  BASE2: osgeo/gdal:ubuntu-full-3.1.3
 
 jobs:
   docker:
@@ -41,10 +44,20 @@ jobs:
         run: |
           docker run --rm ${{ env.TEST_TAG }} otbcli_ReadImageInfo -in test.tif
       -
-        name: Build and push
+        name: Build and push small
         uses: docker/build-push-action@v2
         with:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ${{ env.PROD_TAG }}
+          tags: ${{ env.PROD_TAG }}-small
+          build-args: BASE=${{env.BASE1}}
+      -
+        name: Build and push full 
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ env.PROD_TAG }}-full
+          build-args: BASE=${{env.BASE2}}
