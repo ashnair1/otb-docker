@@ -29,4 +29,3 @@ ENV CMAKE_PREFIX_PATH=${TARGET} \
     PATH=${TARGET}/bin:$PATH
 
 COPY . .
-
