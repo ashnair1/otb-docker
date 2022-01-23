@@ -1,7 +1,7 @@
-# Orfeo Toolbox Docker Images
+# Orfeo ToolBox Docker Images
 
 
-Repository for building docker images containing [Orfeo Toolbox](https://www.orfeo-toolbox.org/). Each version has its own branch that you can checkout and build from.
+Repository for building docker images containing [Orfeo ToolBox](https://www.orfeo-toolbox.org/). Each version has its own branch that you can checkout and build from.
 
 <!-- ![Docker Pulls](https://img.shields.io/docker/pulls/ashnair1/otb?label=Docker%20Pulls&logo=docker) -->
 
