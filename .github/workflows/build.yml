@@ -4,7 +4,6 @@ on:
   push:
     paths:
       - 'Dockerfile'
-      - 'build.yml'
 
 env:
   TEST_TAG: ${{ secrets.DOCKERHUB_USERNAME }}/otb:7.4.0test
