@@ -39,7 +39,7 @@ Refer to the documentation [here](https://github.com/OSGeo/gdal/tree/master/dock
 Pull an image with a specific version of OTB
 
 ```console
-docker pull ashnair1/otb/7.4.0:latest
+docker pull ashnair1/otb:7.4.0-small
 ```
 
 
