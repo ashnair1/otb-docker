@@ -12,6 +12,7 @@ Repository for building docker images containing [Orfeo ToolBox](https://www.orf
 |  7.2.0   | ![7.2.0](https://github.com/ashnair1/otb-docker/actions/workflows/build.yml/badge.svg?branch=7.2.0)  |![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ashnair1/otb/7.2.0-small?label=small&logo=Docker) ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ashnair1/otb/7.2.0-full?label=full&logo=Docker)|
 |  7.3.0   | ![7.3.0](https://github.com/ashnair1/otb-docker/actions/workflows/build.yml/badge.svg?branch=7.3.0)  | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ashnair1/otb/7.3.0-small?label=small&logo=Docker) ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ashnair1/otb/7.3.0-full?label=full&logo=Docker)|
 |  7.4.0   | ![7.4.0](https://github.com/ashnair1/otb-docker/actions/workflows/build.yml/badge.svg?branch=7.4.0)  | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ashnair1/otb/7.4.0-small?label=small&logo=Docker) ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ashnair1/otb/7.4.0-full?label=full&logo=Docker)|
+|  8.0.0   | ![8.0.0](https://github.com/ashnair1/otb-docker/actions/workflows/build.yml/badge.svg?branch=8.0.0)  | ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ashnair1/otb/8.0.0-small?label=small&logo=Docker) ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/ashnair1/otb/8.0.0-full?label=full&logo=Docker)|
 
 
 ### Build
