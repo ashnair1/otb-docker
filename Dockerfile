@@ -8,12 +8,26 @@ SHELL [ "/bin/bash", "-c" ]
 
 ENV TARGET=/opt/otb
 
-RUN apt-get update && apt-get -y install python3-distutils wget file
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN : \
+    apt-get update \
+    # Required packages to extract OTB from the archive
+    && apt-get install -y --no-install-recommends wget file python3 python3-dev python3-numpy \
+    # Required packages to run OTB GUI tools AND recompile the Python bindings
+    && apt-get install -y --no-install-recommends '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev \
+    # Required tools to recompile the bindings
+    && apt-get install -y --no-install-recommends g++ cmake make \
+    # Clean up
+    && apt-get clean && rm -rf /var/lib/apt/lists/* \
+    && :
 
+# Download OTB
 RUN wget -P /opt/ https://www.orfeo-toolbox.org/packages/archives/OTB/OTB-7.3.0-Linux64.run && chmod +x /opt/OTB-7.3.0-Linux64.run
-RUN mkdir -p /opt/otb && /opt/OTB-7.3.0-Linux64.run --target ${TARGET} &> /tmp/.otb_build.log
-RUN rm /opt/OTB-7.3.0-Linux64.run
+RUN : \
+    mkdir -p ${TARGET} \
+    && /opt/OTB-7.3.0-Linux64.run --target ${TARGET} &> /tmp/.otb_build.log \
+    && rm /opt/OTB-7.3.0-Linux64.run
+
+RUN source ${TARGET}/otbenv.profile && cd ${TARGET} && ctest -S share/otb/swig/build_wrapping.cmake -VV
 
 FROM ${BASE}
 
