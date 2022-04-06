@@ -1,4 +1,4 @@
-ARG BASE=osgeo/gdal:ubuntu-small-3.1.3
+ARG BASE=osgeo/gdal:ubuntu-full-3.1.3
 FROM $BASE AS build
 
 LABEL maintainer="ashnair1"
@@ -9,7 +9,7 @@ SHELL [ "/bin/bash", "-c" ]
 ENV TARGET=/opt/otb
 
 RUN : \
-    apt-get update \
+    && apt-get update \
     # Required packages to extract OTB from the archive
     && apt-get install -y --no-install-recommends wget file python3 python3-dev python3-numpy \
     # Required packages to run OTB GUI tools AND recompile the Python bindings
