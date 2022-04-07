@@ -42,7 +42,7 @@ jobs:
       -
         name: Test
         run: |
-          docker run --rm ${{ env.TEST_TAG }} otbcli_ReadImageInfo -in test.tif; python -c "import otbApplication"
+          docker run --rm ${{ env.TEST_TAG }} /bin/bash -c "otbcli_ReadImageInfo -in test.tif; python -c \"import otbApplication\""
       -
         name: Build and push small
         uses: docker/build-push-action@v2
