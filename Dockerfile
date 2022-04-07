@@ -15,9 +15,12 @@ RUN : \
     # Required packages to run OTB GUI tools AND recompile the Python bindings
     && apt-get install -y --no-install-recommends '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev \
     # Required tools to recompile the bindings
-    && apt-get install -y --no-install-recommends g++-7 cmake make \
+    && apt-get install -y --no-install-recommends gcc-7 g++-7 cmake make \
     # Clean up
     && apt-get clean && rm -rf /var/lib/apt/lists/* \
+    # Symlink gcc & g++
+    && ln -s /usr/bin/gcc-7 /usr/bin/gcc \
+    && ln -s /usr/bin/g++-7 /usr/bin/g++ \
     && :
 
 # Download OTB
